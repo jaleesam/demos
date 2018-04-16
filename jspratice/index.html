@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html> 
+    <style>
+        #container{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: blue;
+        }
+
+        #demo{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: yellow;
+        }
+    </style>
+<head>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <div id= "div1" clas="fa"></div>
+            
+    <p>
+        <button onclick="funA()">Click Me</button>
+    </p>
+
+    <div id="container">
+        <div id="demo"></div>
+    </div>
+
+   
+
+    <script>
+    function funA(){
+        var elem = document.getElementById("demo");
+        var pos = 0;
+        var id = setInterval(frame, 25);
+        function frame(){
+            if(pos == 350){
+                clearInterval(id);
+             }else{
+                 pos++;
+                 elem.style.top = pos + 'px';
+                 elem.style.left = pos + 'px';
+             }
+            }
+        }
+
+        function chargebattery() {
+  var a;
+  a = document.getElementById("div1");
+  a.innerHTML = "&#xf244;";
+  setTimeout(function () {
+      a.innerHTML = "&#xf243;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf242;";
+    }, 2000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf241;";
+    }, 3000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf240;";
+    }, 4000);
+}
+chargebattery();
+setInterval(chargebattery, 5000);
+    </script>
+    </body>
+</html>
